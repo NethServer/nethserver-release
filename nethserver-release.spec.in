@@ -1,10 +1,8 @@
 Summary: NethServer release file
 Name: nethserver-release
-%define version 10
-%define release TP01
-%define displayversion %{version}
-Version: %{version}
-Release: %{release}%{?dist}
+%define displayversion %{version}-%{release}
+Version: @@VERSION@@
+Release: @@RELEASE@@%{?dist}
 License: GPL
 Group: System Environment/Base
 BuildArch: noarch
@@ -17,8 +15,8 @@ BuildRequires: perl, nethserver-devtools
 NethServer release file
 
 %changelog
-* Wed Oct 12 2011 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> 10.TP01.nh
-- First Techincal Preview
+* Tue Dec 04 2012 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> 6.3.alpha1
+- First Alpha release
 
 %prep
 
