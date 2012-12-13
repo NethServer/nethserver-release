@@ -1,22 +1,16 @@
 Summary: NethServer release file
 Name: nethserver-release
-%define displayversion %{version}-%{release}
+%define displayversion %{version}
 Version: @@VERSION@@
 Release: @@RELEASE@@%{?dist}
 License: GPL
-Group: System Environment/Base
 BuildArch: noarch
-BuildRoot: /var/tmp/%{name}-%{version}-%{release}-buildroot
 Requires: centos-release
-Requires: nethserver-base
+
 BuildRequires: perl, nethserver-devtools
 
 %description
 NethServer release file
-
-%changelog
-* Tue Dec 04 2012 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> 6.3.alpha1
-- First Alpha release
 
 %prep
 
@@ -37,3 +31,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}-%{version}-%{release}-filelist
 %defattr(-,root,root)
+
+%changelog
