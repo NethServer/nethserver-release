@@ -14,6 +14,9 @@ BuildRequires: perl, nethserver-devtools
 %description
 Updates /etc/issue and /etc/redhat-release contents
 
+%prep
+%setup
+
 %build
 ./createlinks '@@VERSION@@'
 
