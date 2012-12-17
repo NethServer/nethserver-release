@@ -1,0 +1,3 @@
+{$sysconfig{ProductName}} release {$sysconfig{ReleaseVersion}}
+Kernel \r on an \m
+

@@ -1,33 +1,31 @@
-Summary: NethServer release file
+Summary: NethServer release rebrand
 Name: nethserver-release
-%define displayversion %{version}
 Version: @@VERSION@@
 Release: @@RELEASE@@%{?dist}
 License: GPL
 BuildArch: noarch
+Source: %{name}-%{version}.tar.gz
+
 Requires: centos-release
+Requires: nethserver-base
 
 BuildRequires: perl, nethserver-devtools
 
 %description
-NethServer release file
-
-%prep
+Updates /etc/issue and /etc/redhat-release contents
 
 %build
+./createlinks '@@VERSION@@'
 
 %install
-mkdir -p $RPM_BUILD_ROOT/etc
-echo "NethServer release %{displayversion}" >\
- $RPM_BUILD_ROOT/etc/nethserver-release
-mkdir -p $RPM_BUILD_ROOT/etc/e-smith/db/configuration/force/sysconfig
-echo "%{displayversion}" \
-   > $RPM_BUILD_ROOT/etc/e-smith/db/configuration/force/sysconfig/ReleaseVersion
-/sbin/e-smith/genfilelist $RPM_BUILD_ROOT \
-    > %{name}-%{version}-%{release}-filelist
-
-%clean
 rm -rf $RPM_BUILD_ROOT
+(cd root   ; find . -depth -not -name '*.orig' -print  | cpio -dump $RPM_BUILD_ROOT)
+%{genfilelist} $RPM_BUILD_ROOT > %{name}-%{version}-%{release}-filelist
+echo "%doc COPYING"          >> %{name}-%{version}-%{release}-filelist
+
+%post
+ln -sf nethserver-release /etc/redhat-release
+ln -sf nethserver-release /etc/system-release
 
 %files -f %{name}-%{version}-%{release}-filelist
 %defattr(-,root,root)
