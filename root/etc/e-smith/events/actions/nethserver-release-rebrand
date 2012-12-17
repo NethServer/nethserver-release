@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ln -sf nethserver-release /etc/redhat-release
+ln -sf nethserver-release /etc/system-release

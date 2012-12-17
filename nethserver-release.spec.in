@@ -23,10 +23,6 @@ rm -rf $RPM_BUILD_ROOT
 %{genfilelist} $RPM_BUILD_ROOT > %{name}-%{version}-%{release}-filelist
 echo "%doc COPYING"          >> %{name}-%{version}-%{release}-filelist
 
-%post
-ln -sf nethserver-release /etc/redhat-release
-ln -sf nethserver-release /etc/system-release
-
 %files -f %{name}-%{version}-%{release}-filelist
 %defattr(-,root,root)
 

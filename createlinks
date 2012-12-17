@@ -31,6 +31,10 @@ event_templates('nethserver-base-update', qw(
     /etc/nethserver-release
 ));
 
+event_actions('nethserver-base-update', qw(
+    nethserver-release-rebrand 20
+));
+
 # Override DB sysconfig/ReleaseVersion prop:
 if($version) {
     open(my $fh, '>', 'root/etc/e-smith/db/configuration/force/sysconfig/ReleaseVersion') || die;
