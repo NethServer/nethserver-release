@@ -29,6 +29,7 @@ my $version = shift;
 event_templates('nethserver-base-update', qw(
     /etc/issue
     /etc/nethserver-release
+    /etc/yum.conf
 ));
 
 event_actions('nethserver-base-update', qw(
