@@ -1,1 +1,1 @@
-{$sysconfig{ProductName}} release {$sysconfig{ReleaseVersion}}
+{$sysconfig{ProductName}} release {$sysconfig{Version}} ({$sysconfig{Release}})
