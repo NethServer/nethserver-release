@@ -38,6 +38,7 @@ event_actions('nethserver-base-update', qw(
 
 # Override DB sysconfig/ReleaseVersion prop:
 if($version) {
+    $version=substr($version, 0, index($version, '.', 2)); # extract first two numbers
     open(my $fh, '>', 'root/etc/e-smith/db/configuration/force/sysconfig/ReleaseVersion') || die;
     print $fh $version . "\n";
     close($fh);
