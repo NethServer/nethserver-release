@@ -48,7 +48,7 @@ if($version) {
 
 # Override DB sysconfig/Release prop:
 if($release) {
-    if ($release =~ /\d/) { #is a number
+    if ($release =~ /^\d+$/) { #is a number
         if ($release eq "1") { # if 1, print Final
             $release = "Final";
         } else {
