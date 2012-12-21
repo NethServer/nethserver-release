@@ -1,0 +1,53 @@
+#!/usr/bin/perl -w
+#
+# Copyright (C) 2012 Nethesis S.r.l.
+# http://www.nethesis.it - support@nethesis.it
+# 
+# This script is part of NethServer.
+# 
+# NethServer is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License,
+# or any later version.
+# 
+# NethServer is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with NethServer.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+use strict;
+
+# The version tag is passed as 1st argument by RPM %build scriptlet
+my $version = shift;
+# The release tag is passed as 2nd argument by RPM %build scriptlet
+my $release = shift;
+
+# Override DB sysconfig/Version prop:
+if($version) {
+    $version =~ s/^(\d+)\.(\d+).*$/$1.$2/; # extract first two numbers
+    open(my $fh, '>', 'root/etc/e-smith/db/configuration/force/sysconfig/Version') 
+	|| die "Could not set version string $version\n";
+    print $fh $version . "\n";
+    close($fh);
+}
+
+# Override DB sysconfig/Release prop:
+if($release) {
+    if ($release =~ /^\d+$/) { #is a number
+        if ($release eq "1") { # if 1, print Final
+            $release = "Final";
+        } else {
+            $release = "Dirty";
+        }
+    } else {
+        # if not a number, just print the value
+    }  
+    open(my $fh, '>', 'root/etc/e-smith/db/configuration/force/sysconfig/Release') 
+	|| die "Could not set release version $release";
+    print $fh $release . "\n";
+    close($fh);
+}

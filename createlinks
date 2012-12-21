@@ -23,11 +23,6 @@ use esmith::Build::CreateLinks  qw(:all);
 use File::Path;
 use strict;
 
-# The version tag is passed as 1st argument by RPM %build scriptlet
-my $version = shift;
-# The release tag is passed as 1st argument by RPM %build scriptlet
-my $release = shift;
-
 event_templates('nethserver-base-update', qw(
     /etc/issue
     /etc/nethserver-release
@@ -38,26 +33,3 @@ event_actions('nethserver-base-update', qw(
     nethserver-release-rebrand 20
 ));
 
-# Override DB sysconfig/Version prop:
-if($version) {
-    $version=substr($version, 0, index($version, '.', 2)); # extract first two numbers
-    open(my $fh, '>', 'root/etc/e-smith/db/configuration/force/sysconfig/Version') || die;
-    print $fh $version . "\n";
-    close($fh);
-}
-
-# Override DB sysconfig/Release prop:
-if($release) {
-    if ($release =~ /^\d+$/) { #is a number
-        if ($release eq "1") { # if 1, print Final
-            $release = "Final";
-        } else {
-            $release = "Dirty";
-        }
-    } else {
-        # if not a number, just print the value
-    }  
-    open(my $fh, '>', 'root/etc/e-smith/db/configuration/force/sysconfig/Release') || die;
-    print $fh $release . "\n";
-    close($fh);
-}

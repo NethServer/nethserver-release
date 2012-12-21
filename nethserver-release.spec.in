@@ -18,7 +18,8 @@ Updates /etc/issue and /etc/redhat-release contents
 %setup
 
 %build
-./createlinks '@@VERSION@@' '@@RELEASE@@'
+perl createlinks 
+./setversion '@@VERSION@@' '@@RELEASE@@'
 
 %install
 rm -rf $RPM_BUILD_ROOT
