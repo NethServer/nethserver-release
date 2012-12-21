@@ -37,14 +37,12 @@ if($version) {
 
 # Override DB sysconfig/Release prop:
 if($release) {
-    if ($release =~ /^\d+$/) { #is a number
-        if ($release eq "1") { # if 1, print Final
-            $release = "Final";
-        } else {
-            $release = "Dirty";
-        }
+    if ($release eq "1") { # if 1, print Final
+	$release = "Final";
     } else {
-        # if not a number, just print the value
+        # if not 1, just print the substring before the first dot
+	$release =~ s/([^\.]+).*/$1/;
+	warn "RELEASE VERSION SET TO '$release'\n";
     }  
     open(my $fh, '>', 'root/etc/e-smith/db/configuration/force/sysconfig/Release') 
 	|| die "Could not set release version $release";

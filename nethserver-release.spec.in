@@ -19,6 +19,7 @@ Updates /etc/issue and /etc/redhat-release contents
 
 %build
 perl createlinks 
+# force values in configuration DB:
 ./setversion '@@VERSION@@' '@@RELEASE@@'
 
 %install
