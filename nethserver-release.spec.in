@@ -1,7 +1,7 @@
 Summary: NethServer release rebrand
 Name: nethserver-release
 Version: @@VERSION@@
-Release: @@RELEASE@@%{?dist}
+Release: @@RELEASE@@
 License: GPL
 BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
