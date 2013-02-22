@@ -7,7 +7,6 @@ BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
 
 Requires: centos-release
-Requires: nethserver-base
 
 BuildRequires: perl, nethserver-devtools
 
