@@ -3,14 +3,14 @@
 #
 
 [centos-base]
-name=CentOS 6.3 base
+name=CentOS base
 baseurl=http://pulp.nethesis.it/centos/$releasever/os/$basearch/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 enabled=1
 enablegroups=0
 
 [centos-updates]
-name=CentOS 6.3 updates
+name=CentOS updates
 baseurl=http://pulp.nethesis.it/centos/$releasever/updates/$basearch/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 enabled=1
