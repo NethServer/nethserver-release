@@ -33,3 +33,7 @@ event_actions('nethserver-base-update', qw(
     nethserver-release-rebrand 20
 ));
 
+event_actions('first-boot', qw(
+    nethserver-release-rebrand 10
+));
+

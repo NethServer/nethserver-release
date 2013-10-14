@@ -1,4 +1,5 @@
 #!/bin/bash
 
+/sbin/e-smith/expand-template /etc/nethserver-release
 ln -sf nethserver-release /etc/redhat-release
 ln -sf nethserver-release /etc/system-release
