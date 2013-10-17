@@ -31,6 +31,9 @@ echo "%doc COPYING"          >> %{name}-%{version}-%{release}-filelist
 %defattr(-,root,root)
 
 %changelog
+* Thu Oct 17 2013 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 6.4-beta2.ns6
+- Beta2 release based on CentOS 6.4 
+
 * Thu May 02 2013 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 6.4-beta1.ns6
 - First beta release based on CentOS 6.4 
 
