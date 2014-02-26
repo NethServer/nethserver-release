@@ -8,7 +8,7 @@ obsoletes=1
 gpgcheck=1
 plugins=1
 installonly_limit=5
-bugtracker_url=https://dev.nethesis.it/projects/nethserver/issues
+bugtracker_url=http://dev.nethserver.org/projects/nethserver
 distroverpkg=nethserver-release
 
 #  This is the default, if you make this bigger yum won't see if the metadata
