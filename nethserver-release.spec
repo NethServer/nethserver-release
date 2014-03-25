@@ -1,10 +1,10 @@
 %define distroversion 6.5
-%define distrorelease rc1
+%define distrorelease Final
 
 Summary: NethServer release rebrand
 Name: nethserver-release
 Version: %{distroversion}
-Release: 4%{?dist}.%{distrorelease}
+Release: 5%{?dist}
 License: GPL
 BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
@@ -21,7 +21,7 @@ Updates /etc/issue and /etc/redhat-release contents
 
 %build
 perl createlinks 
-./setversion %{version} %{distrorelease}
+./setversion '%{version}' '%{distrorelease}'
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -34,6 +34,9 @@ echo "%config(noreplace) /etc/yum.repos.d/NethServer.repo" >> %{name}-%{version}
 %defattr(-,root,root)
 
 %changelog
+* Tue Mar 25 2014 Davide Principi <davide.principi@nethesis.it> - 6.5-5
+- Final release
+
 * Wed Feb 26 2014 Davide Principi <davide.principi@nethesis.it> - 6.5-4
 - rc1 release
 

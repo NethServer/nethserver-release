@@ -27,7 +27,7 @@ my $version = shift;
 my $release = shift;
 
 # Override DB sysconfig/Version prop:
-if($version) {
+if(defined $version) {
     $version =~ s/^(\d+)\.(\d+).*$/$1.$2/; # extract first two numbers
     open(my $fh, '>', 'root/etc/e-smith/db/configuration/force/sysconfig/Version') 
 	|| die "Could not set version string $version\n";
@@ -36,7 +36,7 @@ if($version) {
 }
 
 # Override DB sysconfig/Release prop:
-if($release) {
+if(defined $release) {
     if ($release eq "1") { # if 1, print Final
 	$release = "Final";
     } else {

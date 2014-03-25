@@ -23,6 +23,11 @@ use esmith::Build::CreateLinks  qw(:all);
 use File::Path;
 use strict;
 
+event_templates('nethserver-release-update', qw(
+    /etc/issue
+    /etc/nethserver-release
+));
+
 event_templates('nethserver-base-update', qw(
     /etc/issue
     /etc/nethserver-release
