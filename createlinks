@@ -1,4 +1,5 @@
 #!/usr/bin/perl -w
+
 #
 # Copyright (C) 2012 Nethesis S.r.l.
 # http://www.nethesis.it - support@nethesis.it
@@ -19,15 +20,24 @@
 # along with NethServer.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-use esmith::Build::CreateLinks  qw(:all);
-use File::Path;
 use strict;
+use esmith::Build::CreateLinks  qw(:all);
 
+#
+# nethserver-release-update event
+#
 event_templates('nethserver-release-update', qw(
     /etc/issue
     /etc/nethserver-release
 ));
 
+event_actions('nethserver-release-update', qw(
+    initialize-default-databases 00
+));
+
+#
+# nethserver-base-update event
+#
 event_templates('nethserver-base-update', qw(
     /etc/issue
     /etc/nethserver-release
@@ -38,6 +48,9 @@ event_actions('nethserver-base-update', qw(
     nethserver-release-rebrand 20
 ));
 
+#
+# system-init event
+#
 event_actions('system-init', qw(
     nethserver-release-rebrand 10
 ));

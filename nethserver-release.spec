@@ -4,7 +4,7 @@
 Summary: NethServer release rebrand
 Name: nethserver-release
 Version: %{distroversion}
-Release: 5%{?dist}
+Release: 6%{?dist}
 License: GPL
 BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
@@ -34,6 +34,9 @@ echo "%config(noreplace) /etc/yum.repos.d/NethServer.repo" >> %{name}-%{version}
 %defattr(-,root,root)
 
 %changelog
+* Fri Mar 28 2014 Davide Principi <davide.principi@nethesis.it> - 6.5-6
+- Fixed Version Release prop expansion
+
 * Tue Mar 25 2014 Davide Principi <davide.principi@nethesis.it> - 6.5-5
 - Final release
 
