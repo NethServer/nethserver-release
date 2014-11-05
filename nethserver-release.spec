@@ -1,10 +1,10 @@
-%define distroversion 6.5
-%define distrorelease Final
+%define distroversion 6.6
+%define distrorelease Beta1
 
-Summary: NethServer release rebrand
+Summary: NethServer YUM repo configuration
 Name: nethserver-release
 Version: %{distroversion}
-Release: 6%{?dist}
+Release: 0.3.beta1%{?dist}
 License: GPL
 BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
@@ -14,7 +14,7 @@ Requires: centos-release
 BuildRequires: perl, nethserver-devtools
 
 %description
-Updates /etc/issue and /etc/redhat-release contents
+NethServer YUM repository configuration
 
 %prep
 %setup
