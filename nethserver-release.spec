@@ -21,7 +21,9 @@ Updates /etc/issue and /etc/redhat-release contents
 
 %build
 perl createlinks 
-./setversion '%{version}' '%{distrorelease}'
+echo %{distroversion} > root/etc/e-smith/db/configuration/force/sysconfig/Version
+echo %{distrorelease} > root/etc/e-smith/db/configuration/force/sysconfig/Release
+echo "NethServer release %{distroversion} (%{distrorelease})" > root/etc/nethserver-release
 
 %install
 rm -rf $RPM_BUILD_ROOT
