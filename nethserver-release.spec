@@ -4,7 +4,7 @@
 Summary: NethServer YUM repo configuration
 Name: nethserver-release
 Version: %{distroversion}
-Release: 0.3.beta1%{?dist}
+Release: 0.4.beta1%{?dist}
 License: GPL
 BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
