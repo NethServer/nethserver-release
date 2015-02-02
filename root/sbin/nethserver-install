@@ -95,7 +95,7 @@ echo
 echo "Installing base system..."
 echo
 logexec "rpm --import /etc/pki/rpm-gpg/*"
-logexec "yum --disablerepo=* --enablerepo=nethserver-base,nethserver-updates,centos-base,centos-updates --releasever=6.5 install @nethserver-iso -y"
+logexec "yum --disablerepo=* --enablerepo=nethserver-base,nethserver-updates,centos-base,centos-updates --releasever=6.6 install @nethserver-iso -y"
 echo
 echo "Configuring system, please wait..."
 echo
