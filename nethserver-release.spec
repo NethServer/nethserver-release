@@ -10,7 +10,6 @@ BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
 URL: %{url_prefix}/%{name}
 
-Requires: centos-release
 BuildRequires: perl, nethserver-devtools
 
 %description
@@ -20,10 +19,11 @@ NethServer YUM repository configuration
 %setup
 
 %build
-perl createlinks 
+perl createlinks
+echo %{distroversion} > root/etc/yum/vars/distroversion
 echo %{distroversion} > root/etc/e-smith/db/configuration/force/sysconfig/Version
 echo %{distrorelease} > root/etc/e-smith/db/configuration/force/sysconfig/Release
-echo "NethServer release %{distroversion} (%{distrorelease})" > root/etc/nethserver-release
+echo "NethServer release %{distroversion} (%{distrorelease})" > root/etc/%{name}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -36,6 +36,9 @@ echo "%config(noreplace) /etc/yum.repos.d/NethServer.repo" >> %{name}-%{version}
 %defattr(-,root,root)
 
 %changelog
+* Wed Mar  4 2015 Davide Principi <davide.principi@nethesis.it> - 6.6-0.8.rc1
+- Changed mirror URLs. Added $distroversion YUM variable/placeholder. 
+
 * Mon Feb  2 2015 Davide Principi <davide.principi@nethesis.it> - 6.6-0.6
 - Fixed release number 6.6 in nethserver-install
 
