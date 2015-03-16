@@ -1,10 +1,10 @@
 %define distroversion 6.6
-%define distrorelease RC1
+%define distrorelease Final
 
 Summary: NethServer YUM repo configuration
 Name: nethserver-release
 Version: 6.6
-Release: 0.9.rc1%{?dist}
+Release: 1%{?dist}
 License: GPL
 BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
@@ -36,6 +36,9 @@ echo "%config(noreplace) /etc/yum.repos.d/NethServer.repo" >> %{name}-%{version}
 %defattr(-,root,root)
 
 %changelog
+* Mon Mar 16 2015 Davide Principi <davide.principi@nethesis.it> - 6.6-1
+- NethServer 6.6 final release.
+
 * Thu Mar 05 2015 Davide Principi <davide.principi@nethesis.it> - 6.6-0.9-rc1
 - YUM package groups moved to nethserver-updates
 
@@ -45,22 +48,4 @@ echo "%config(noreplace) /etc/yum.repos.d/NethServer.repo" >> %{name}-%{version}
 
 * Mon Feb  2 2015 Davide Principi <davide.principi@nethesis.it> - 6.6-0.6
 - Fixed release number 6.6 in nethserver-install
-
-* Fri Mar 28 2014 Davide Principi <davide.principi@nethesis.it> - 6.5-6
-- Fixed Version Release prop expansion
-
-* Tue Mar 25 2014 Davide Principi <davide.principi@nethesis.it> - 6.5-5
-- Final release
-
-* Wed Feb 26 2014 Davide Principi <davide.principi@nethesis.it> - 6.5-4
-- rc1 release
-
-* Thu Oct 17 2013 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 6.4-beta2.ns6
-- Beta2 release based on CentOS 6.4 
-
-* Thu May 02 2013 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 6.4-beta1.ns6
-- First beta release based on CentOS 6.4 
-
-* Mon Mar 18 2013 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 6.4-alpha2.ns6
-- First alpha release based on CentOS 6.4 
 
