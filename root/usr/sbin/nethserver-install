@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #
 # Copyright (C) 2014 Nethesis S.r.l.
 # http://www.nethesis.it - support@nethesis.it
@@ -95,7 +97,7 @@ echo
 echo "Installing base system..."
 echo
 logexec "rpm --import /etc/pki/rpm-gpg/*"
-logexec "yum --disablerepo=* --enablerepo=nethserver-base,nethserver-updates,centos-base,centos-updates --releasever=6.6 install @nethserver-iso -y"
+logexec "yum --disablerepo=* --enablerepo=nethserver-base,nethserver-updates,centos-base,centos-updates install @nethserver-iso -y"
 echo
 echo "Configuring system, please wait..."
 echo
