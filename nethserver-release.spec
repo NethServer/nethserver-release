@@ -4,7 +4,7 @@
 Summary: NethServer YUM repo configuration
 Name: nethserver-release
 Version: 6.6
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: GPL
 BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
@@ -36,6 +36,9 @@ echo "%config(noreplace) /etc/yum.repos.d/NethServer.repo" >> %{name}-%{version}
 %defattr(-,root,root)
 
 %changelog
+* Wed Mar 18 2015 Davide Principi <davide.principi@nethesis.it> - 6.6-2
+- Fixed nethserver-install script
+
 * Mon Mar 16 2015 Davide Principi <davide.principi@nethesis.it> - 6.6-1
 - NethServer 6.6 final release.
 
