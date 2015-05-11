@@ -18,6 +18,14 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 enabled=1
 enablegroups=0
 
+[epel-updates]
+name=EPEL-$releasever Updates
+mirrorlist=http://mirrorlist.nethserver.org/$distroversion/epel?release=$releasever&repo=updates&arch=$basearch
+#baseurl=http://download.fedoraproject.org/pub/epel/$releasever/$basearch
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-$releasever
+enabled=1
+enablegroups=0
+
 
 [nethserver-base]
 name=NethServer $distroversion base 
