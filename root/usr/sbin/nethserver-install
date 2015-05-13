@@ -42,7 +42,7 @@ function log {
 function logexec {
     cmd=$1
     log "$cmd"
-    $cmd | tee -a /var/log/nethserver-install.log
+    { $cmd 2>&1 || exit 1 ; } | tee -a /var/log/nethserver-install.log
 }
 
 function end {
@@ -94,7 +94,7 @@ fi
 log "Starting installation"
 echo "Starting installation process. It will take a while..."
 echo
-echo "Installing base system..."
+echo "Installing base system${modules:+ and }$modules..."
 echo
 logexec "yum -y --disablerepo=* --enablerepo=extras,base,updates install epel-release deltarpm"
 logexec "rpm --import /etc/pki/rpm-gpg/*"
@@ -102,11 +102,6 @@ logexec "yum --disablerepo=* --enablerepo=nethserver-base,nethserver-updates,cen
 echo
 echo "Configuring system, please wait..."
 echo
-logexec "/sbin/e-smith/signal-event system-init"
-if [ "$modules" != "" ]; then
-    echo 
-    echo "Installing extra modules..."
-    echo
-    logexec "yum install $modules -y"
-fi
+touch /var/spool/first-boot
+logexec "systemctl start nethserver-system-init.service"
 end
