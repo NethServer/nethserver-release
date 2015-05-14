@@ -6,7 +6,7 @@
 name=CentOS-$releasever Base
 mirrorlist=http://mirrorlist.nethserver.org/$distroversion/centos?release=$releasever&repo=os&arch=$basearch
 #baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-$releasever
 enabled=1
 enablegroups=0
 
@@ -14,7 +14,7 @@ enablegroups=0
 name=CentOS-$releasever Updates
 mirrorlist=http://mirrorlist.nethserver.org/$distroversion/centos?release=$releasever&repo=updates&arch=$basearch
 #baseurl=http://mirror.centos.org/centos/$releasever/updates/$basearch/
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-$relasever
 enabled=1
 enablegroups=0
 
@@ -31,7 +31,7 @@ enablegroups=0
 name=NethServer $distroversion base 
 mirrorlist=http://mirrorlist.nethserver.org/$distroversion/nethserver?release=$releasever&repo=base&arch=$basearch
 #baseurl=http://mirror.nethserver.org/nethserver/$distroversion/base/$basearch/
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-6
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-$releasever
 enabled=1
 enablegroups=0
 
@@ -39,7 +39,7 @@ enablegroups=0
 name=NethServer $distroversion updates
 mirrorlist=http://mirrorlist.nethserver.org/$distroversion/nethserver?release=$releasever&repo=updates&arch=$basearch
 #baseurl=http://mirror.nethserver.org/nethserver/$distroversion/updates/$basearch/
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-6
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-$releasever
 enabled=1
 enablegroups=1
 
@@ -47,6 +47,6 @@ enablegroups=1
 name=NethServer $distroversion testing
 mirrorlist=http://mirrorlist.nethserver.org/$distroversion/nethserver?release=$releasever&repo=testing&arch=$basearch
 #baseurl=http://mirror.nethserver.org/nethserver/$distroversion/testing/$basearch/
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-6
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-$releasever
 enabled=0
 enablegroups=0
