@@ -41,7 +41,7 @@ mirrorlist=http://mirrorlist.nethserver.org/$distroversion/epel?release=$release
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-$releasever
 enabled=1
 enablegroups=0
-
+exclude=gnustep-*
 
 [nethserver-base]
 name=NethServer $distroversion base 
