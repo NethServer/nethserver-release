@@ -29,7 +29,6 @@ use esmith::Build::CreateLinks  qw(:all);
 event_templates('nethserver-release-update', qw(
     /etc/issue
     /etc/motd
-    /etc/yum.conf
 ));
 
 event_actions('nethserver-release-update', qw(
@@ -41,7 +40,6 @@ event_actions('nethserver-release-update', qw(
 #
 event_templates('nethserver-base-update', qw(
     /etc/issue
-    /etc/yum.conf
     /etc/motd
 ));
 
