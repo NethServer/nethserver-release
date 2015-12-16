@@ -2,47 +2,6 @@
 # nethserver.org YUM repositories configuration
 #
 
-[centos-base]
-name=CentOS-$releasever base
-mirrorlist=http://mirrorlist.nethserver.org/$distroversion/centos?release=$releasever&repo=os&arch=$basearch
-#baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-$releasever
-enabled=1
-enablegroups=0
-
-[centos-updates]
-name=CentOS-$releasever updates
-mirrorlist=http://mirrorlist.nethserver.org/$distroversion/centos?release=$releasever&repo=updates&arch=$basearch
-#baseurl=http://mirror.centos.org/centos/$releasever/updates/$basearch/
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-$relasever
-enabled=1
-enablegroups=0
-
-[centos-extras]
-name=CentOS-$releasever extras
-mirrorlist=http://mirrorlist.nethserver.org/$distroversion/centos?release=$releasever&repo=extras&arch=$basearch
-#baseurl=http://mirror.centos.org/centos/$releasever/extras/$basearch/
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-$relasever
-enabled=1
-enablegroups=0
-
-[centos-centosplus]
-name=CentOS-$releasever centosplus
-mirrorlist=http://mirrorlist.nethserver.org/$distroversion/centos?release=$releasever&repo=centosplus&arch=$basearch
-#baseurl=http://mirror.centos.org/centos/$releasever/centosplus/$basearch/
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-$relasever
-enabled=0
-enablegroups=0
-
-[epel-updates]
-name=EPEL-$releasever updates
-mirrorlist=http://mirrorlist.nethserver.org/$distroversion/epel?release=$releasever&repo=updates&arch=$basearch
-#baseurl=http://download.fedoraproject.org/pub/epel/$releasever/$basearch
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-$releasever
-enabled=1
-enablegroups=0
-exclude=gnustep-*
-
 [nethserver-base]
 name=NethServer $distroversion base 
 mirrorlist=http://mirrorlist.nethserver.org/$distroversion/nethserver?release=$releasever&repo=base&arch=$basearch
