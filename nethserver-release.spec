@@ -1,4 +1,4 @@
-%define distroversion 7
+%define distroversion 7.2.1511
 %define distrorelease alpha1
 
 Summary: NethServer YUM repo configuration
@@ -10,7 +10,7 @@ BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
 URL: %{url_prefix}/%{name}
 
-BuildRequires: perl, nethserver-devtools
+BuildRequires: nethserver-devtools
 
 %description
 NethServer YUM repository configuration
@@ -27,9 +27,9 @@ echo "NethServer release %{distroversion} (%{distrorelease})" > root/etc/%{name}
 %{__install} -d root/%{_nseventsdir}/%{name}-update
 
 %install
-rm -rf $RPM_BUILD_ROOT
-(cd root   ; find . -depth -not -name '*.orig' -print  | cpio -dump $RPM_BUILD_ROOT)
-%{genfilelist} $RPM_BUILD_ROOT > %{name}-%{version}-%{release}-filelist
+rm -rf %{buildroot}
+(cd root   ; find . -depth -not -name '*.orig' -print  | cpio -dump %{buildroot})
+%{genfilelist} %{buildroot} > %{name}-%{version}-%{release}-filelist
 
 %files -f %{name}-%{version}-%{release}-filelist
 %defattr(-,root,root)
@@ -38,7 +38,17 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Thu Oct 15 2015 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 6.7-0.4-1
+- Requires nethserver-firewall-base
+
+* Thu Oct 15 2015 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 6.7-0.3-1
+- NethServer Release 6.7 final
+
 * Wed May  6 2015 Davide Principi <davide.principi@nethesis.it> - 7-0.1
 - First 7-0.1 alpha1 release
+
+* Wed Mar 18 2015 Davide Principi <davide.principi@nethesis.it> - 6.6-2
+- Fixed nethserver-install script
+
 
 
