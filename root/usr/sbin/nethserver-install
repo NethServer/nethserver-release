@@ -56,7 +56,7 @@ function end {
     do
        role=`/sbin/e-smith/db networks getprop $k role`
        if [ "$role" == "green" ]; then
-           ip=$(/sbin/e-smith/db networks getprop eth0 ipaddr)
+           ip=$(/sbin/e-smith/db networks getprop $k ipaddr)
            echo " (or https://$ip:980)"
        fi
     done
