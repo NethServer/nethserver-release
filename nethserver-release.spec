@@ -1,5 +1,5 @@
 %define distroversion 7.2.1511
-%define distrorelease alpha2
+%define distrorelease alpha3
 
 Summary: NethServer YUM repo configuration
 Name: nethserver-release
