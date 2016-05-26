@@ -1,10 +1,10 @@
-%define distroversion 6.7
-%define distrorelease final
+%define distroversion 6.8
+%define distrorelease beta1
 
 Summary: NethServer YUM repo configuration
 Name: nethserver-release
-Version: 6.7
-Release: 0.4%{?dist}
+Version: 6.8
+Release: 0.1%{?dist}
 License: GPL
 BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
@@ -37,6 +37,9 @@ echo "%config(noreplace) /etc/yum.repos.d/NethServer.repo" >> %{name}-%{version}
 %defattr(-,root,root)
 
 %changelog
+* Thu May 26 2016 Davide Principi <davide.principi@nethesis.it> - 6.8-0.1
+- NethServer 6.8 beta1 release
+
 * Thu Oct 15 2015 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 6.7-0.4-1
 - Requires nethserver-firewall-base
 
