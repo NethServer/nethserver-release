@@ -20,7 +20,6 @@ NethServer YUM repository configuration
 
 %build
 perl createlinks
-echo %{distroversion} > root/etc/yum/vars/distroversion
 echo %{distroversion} > root/etc/e-smith/db/configuration/force/sysconfig/Version
 echo %{distrorelease} > root/etc/e-smith/db/configuration/force/sysconfig/Release
 echo "NethServer release %{distroversion} (%{distrorelease})" > root/etc/%{name}
