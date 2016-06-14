@@ -37,6 +37,9 @@ echo "%config(noreplace) /etc/yum.repos.d/NethServer.repo" >> %{name}-%{version}
 %defattr(-,root,root)
 
 %changelog
+* Tue Jun 14 2016 Davide Principi <davide.principi@nethesis.it> - 6.8-1
+- NethServer 6.8 Final release
+
 * Thu May 26 2016 Davide Principi <davide.principi@nethesis.it> - 6.8-0.1
 - NethServer 6.8 beta1 release
 
