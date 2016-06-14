@@ -38,7 +38,7 @@ enablegroups=1
 [nethserver-testing]
 name=NethServer $distroversion testing
 mirrorlist=http://mirrorlist.nethserver.org/$distroversion/nethserver?release=$releasever&repo=testing&arch=$basearch
-#baseurl=http://mirror.nethserver.org/nethserver/$distroversion/testing/$basearch/
+#baseurl=http://packages.nethserver.org/nethserver/$distroversion/testing/$basearch/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-6
 enabled=0
 enablegroups=0
