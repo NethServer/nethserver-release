@@ -36,6 +36,9 @@ echo "%config(noreplace) /etc/yum.repos.d/NethServer.repo" >> %{name}-%{version}
 %defattr(-,root,root)
 
 %changelog
+* Mon Jun 27 2016 Davide Principi <davide.principi@nethesis.it> - 6.8-2
+- nethserver-release installation fails on clean CentOS - Bug #3410 [NethServer]
+
 * Tue Jun 14 2016 Davide Principi <davide.principi@nethesis.it> - 6.8-1
 - NethServer 6.8 Final release
 
