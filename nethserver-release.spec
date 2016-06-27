@@ -11,7 +11,6 @@ Source: %{name}-%{version}.tar.gz
 URL: %{url_prefix}/%{name}
 
 BuildRequires: perl, nethserver-devtools
-Requires: nethserver-firewall-base
 
 %description
 NethServer YUM repository configuration
