@@ -1,10 +1,10 @@
 %define distroversion 7.2.1511
-%define distrorelease alpha3
+%define distrorelease beta1
 
 Summary: NethServer YUM repo configuration
 Name: nethserver-release
 Version: 7
-Release: 0.1%{?dist}
+Release: 0.2%{?dist}
 License: GPL
 BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
@@ -37,6 +37,9 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Thu Jul 07 2016 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 7-0.2
+- First NS7 release
+
 * Thu Oct 15 2015 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 6.7-0.4-1
 - Requires nethserver-firewall-base
 
