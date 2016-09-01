@@ -96,9 +96,9 @@ echo "Starting installation process. It will take a while..."
 echo
 echo "Installing base system${modules:+ and }$modules..."
 echo
-logexec "yum -y --disablerepo=* --enablerepo=extras,base,updates install epel-release deltarpm"
+logexec "yum -y install epel-release deltarpm"
 logexec "rpm --import /etc/pki/rpm-gpg/*"
-logexec "yum --disablerepo=* --enablerepo=nethserver-base,nethserver-updates,base,updates,epel,extras install @nethserver-iso $modules -y"
+logexec "yum install @nethserver-iso $modules -y"
 echo
 echo "Configuring system, please wait..."
 echo
