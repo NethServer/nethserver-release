@@ -1,10 +1,10 @@
 %define distroversion 7.3.1611
-%define distrorelease rc4
+%define distrorelease Final
 
 Summary: NethServer YUM repo configuration
 Name: nethserver-release
 Version: 7
-Release: 0.7%{?dist}
+Release: 1%{?dist}
 License: GPL
 BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
@@ -37,8 +37,11 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Mon Jan 30 2017 Davide Principi <davide.principi@nethesis.it> - 7-1
+- NethServer 7 final release
+
 * Tue Jan 17 2017 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 7-0.7
-- NethServer 7 rc4release
+- NethServer 7 rc4 release
 
 * Thu Dec 15 2016 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 7-0.6
 - NethServer 7 rc3 release
@@ -53,19 +56,7 @@ rm -rf %{buildroot}
 - NethServer 7 beta2 release
 
 * Thu Jul 07 2016 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 7-0.2
-- First NS7 release
-
-* Thu Oct 15 2015 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 6.7-0.4-1
-- Requires nethserver-firewall-base
-
-* Thu Oct 15 2015 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 6.7-0.3-1
-- NethServer Release 6.7 final
-
-* Wed May  6 2015 Davide Principi <davide.principi@nethesis.it> - 7-0.1
-- First 7-0.1 alpha1 release
-
-* Wed Mar 18 2015 Davide Principi <davide.principi@nethesis.it> - 6.6-2
-- Fixed nethserver-install script
+- NethServer 7 beta1 release
 
 
 
