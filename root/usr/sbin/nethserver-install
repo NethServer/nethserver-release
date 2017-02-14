@@ -102,6 +102,7 @@ logexec "yum install @nethserver-iso $modules -y"
 echo
 echo "Configuring system, please wait..."
 echo
-touch /var/spool/first-boot
-logexec "systemctl start nethserver-system-init.service"
+logexec "systemctl stop NetworkManager firewalld"
+logexec "systemctl preset NetworkManager firewalld"
+logexec "/sbin/e-smith/signal-event system-init"
 end
