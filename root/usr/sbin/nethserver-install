@@ -102,7 +102,11 @@ logexec "yum install @nethserver-iso $modules -y"
 echo
 echo "Configuring system, please wait..."
 echo
-logexec "systemctl stop NetworkManager firewalld"
-logexec "systemctl preset NetworkManager firewalld"
+for UNIT in NetworkManager firewalld; do
+    if systemctl is-active -q $UNIT; then
+        logexec "systemctl stop $UNIT"
+        logexec "systemctl preset $UNIT"
+    fi
+done
 logexec "/sbin/e-smith/signal-event system-init"
 end
