@@ -1,10 +1,10 @@
-%define distroversion 6.8
-%define distrorelease Final
+%define distroversion 6.9
+%define distrorelease rc1
 
 Summary: NethServer YUM repo configuration
 Name: nethserver-release
-Version: 6.8
-Release: 2%{?dist}
+Version: 6.9
+Release: 0.1%{?dist}
 License: GPL
 BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
