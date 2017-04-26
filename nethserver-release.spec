@@ -1,10 +1,10 @@
 %define distroversion 6.9
-%define distrorelease rc1
+%define distrorelease Final
 
 Summary: NethServer YUM repo configuration
 Name: nethserver-release
 Version: 6.9
-Release: 0.1%{?dist}
+Release: 1%{?dist}
 License: GPL
 BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
@@ -36,6 +36,9 @@ echo "%config(noreplace) /etc/yum.repos.d/NethServer.repo" >> %{name}-%{version}
 %defattr(-,root,root)
 
 %changelog
+* Wed Apr 26 2017 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 6.9-1-1
+- NethServer 6.9 Final release
+
 * Mon Jun 27 2016 Davide Principi <davide.principi@nethesis.it> - 6.8-2
 - nethserver-release installation fails on clean CentOS - Bug #3410 [NethServer]
 
