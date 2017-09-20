@@ -4,7 +4,7 @@
 
 [nethserver-base]
 name=NethServer-$releasever - Base
-mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=base&arch=$basearch
+mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=base&arch=$basearch&nsrelease=$nsrelease
 #baseurl=http://mirror.nethserver.org/nethserver/$releasever/base/$basearch/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-$releasever
 enabled=1
@@ -12,7 +12,7 @@ enablegroups=0
 
 [nethserver-updates]
 name=NethServer-$releasever - Updates
-mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=updates&arch=$basearch
+mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=updates&arch=$basearch&nsrelease=$nsrelease
 #baseurl=http://mirror.nethserver.org/nethserver/$releasever/updates/$basearch/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-$releasever
 enabled=1
@@ -20,7 +20,7 @@ enablegroups=1
 
 [nethserver-testing]
 name=NethServer-$releasever - Testing
-mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=testing&arch=$basearch
+mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=testing&arch=$basearch&nsrelease=$nsrelease
 #baseurl=http://mirror.nethserver.org/nethserver/$releasever/testing/$basearch/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-$releasever
 enabled=0
