@@ -76,6 +76,7 @@ to update automatically when a new CentOS/NethServer minor version is available.
 6. Create a template for the locked version number and expand it: ::
 
     # mkdir -p /etc/e-smith/templates-custom/etc/yum/vars/nsrelease/
+    # touch  /etc/e-smith/templates-custom/etc/yum/vars/nsrelease/template-begin
     # echo '7.4.1708' > /etc/e-smith/templates-custom/etc/yum/vars/nsrelease/00version_lock
     # expand-template /etc/yum/vars/nsrelease
 
