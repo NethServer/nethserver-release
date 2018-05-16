@@ -1,10 +1,10 @@
 %define distroversion 7.5.1804
-%define distrorelease alpha
+%define distrorelease beta
 
 Summary: NethServer YUM repo configuration
 Name: nethserver-release
 Version: 7
-Release: 5%{?dist}
+Release: 6%{?dist}
 License: GPL
 BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
@@ -37,6 +37,9 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Wed May 16 2018 Davide Principi <davide.principi@nethesis.it> - 7-6
+- NethServer 7.5.1804 beta (rebased on CentOS 7.5.1804)
+
 * Fri Oct 27 2017 Davide Principi <davide.principi@nethesis.it> - 7-5
 - Fix version lock
 
