@@ -45,6 +45,12 @@ Sometimes you may need to lock the server to a specific release, like
 ``7.4.1708``. For instance, you enabled automatic updates but do not want
 to update automatically when a new CentOS/NethServer minor version is available.
 
+1. Ensure the ``nethserver-subscription`` RPM is installed. It is required
+   because it ships the template configuration for ``/etc/yum/vars/nsrelease``, 
+   that does not mean a *Subscription* is needed for this procedure to work: ::
+
+    # yum install nethserver-subscription
+
 1. Select a CentOS mirror from the `official mirror list <https://www.centos.org/download/mirrors/>`_, or run the command ::
 
     # yum --disablerepo=\* --enablerepo=updates repolist -v | grep ^Repo-baseurl
@@ -76,13 +82,12 @@ to update automatically when a new CentOS/NethServer minor version is available.
 6. Create a template for the locked version number and expand it: ::
 
     # mkdir -p /etc/e-smith/templates-custom/etc/yum/vars/nsrelease/
-    # touch  /etc/e-smith/templates-custom/etc/yum/vars/nsrelease/template-begin
     # echo '7.4.1708' > /etc/e-smith/templates-custom/etc/yum/vars/nsrelease/00version_lock
     # expand-template /etc/yum/vars/nsrelease
 
 7. Verify the repositories are configured correctly: ::
 
-    # yum repolist -v
+    # yum clean all && yum repolist -v
 
 This procedure does not include the following upstream repositories, because
 they do not provide minor version paths, like ``7.4.1708``. They just provide
