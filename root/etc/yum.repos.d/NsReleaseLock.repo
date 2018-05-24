@@ -1,0 +1,38 @@
+# NsReleaseLock.repo
+#
+# CentOS locked to 'nsrelease'.
+# This configuration is active only when sysconfig[NsRelease] is 'enabled'.
+#
+# If the mirrorlist= does not work for you, as a fall back you can try the 
+# remarked out baseurl= line instead.
+#
+#
+
+#
+# CentOS
+#
+
+[ce-base]
+name=CE-Base-$nsrelease
+mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=ce-base&arch=$basearch&nsrelease=$nsrelease
+#baseurl=http://mirror.centos.org/centos/$nsrelease/os/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+enabled = 0
+
+[ce-updates]
+name=CE-Updates-$nsrelease
+mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=ce-updates&arch=$basearch&nsrelease=$nsrelease
+#baseurl=http://mirror.centos.org/centos/$nsrelease/updates/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+enabled = 0
+
+[ce-extras]
+name=CE-Extras-$nsrelease
+mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=ce-extras&arch=$basearch&nsrelease=$nsrelease
+#baseurl=http://mirror.centos.org/centos/$nsrelease/extras/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+enabled = 0
+
