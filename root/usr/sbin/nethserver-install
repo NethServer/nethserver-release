@@ -108,5 +108,6 @@ for UNIT in NetworkManager firewalld; do
         logexec "systemctl preset $UNIT"
     fi
 done
+logexec "systemctl enable nethserver-config-network"
 logexec "/sbin/e-smith/signal-event system-init"
 end
