@@ -1,9 +1,9 @@
-%define distroversion 6.9
+%define distroversion 6.10
 %define distrorelease Final
 
 Summary: NethServer YUM repo configuration
 Name: nethserver-release
-Version: 6.9
+Version: 6.10
 Release: 1%{?dist}
 License: GPL
 BuildArch: noarch
@@ -36,6 +36,9 @@ echo "%config(noreplace) /etc/yum.repos.d/NethServer.repo" >> %{name}-%{version}
 %defattr(-,root,root)
 
 %changelog
+* Fri Jul 20 2018 Davide Principi <davide.principi@nethesis.it> - 6.10-1
+- NethServer 6.10 Final release
+
 * Wed Apr 26 2017 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 6.9-1-1
 - NethServer 6.9 Final release
 
