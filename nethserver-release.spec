@@ -1,10 +1,10 @@
-%define distroversion 7.5.1804
-%define distrorelease final
+%define distroversion 7.6.1810
+%define distrorelease beta
 
 Summary: NethServer YUM repo configuration
 Name: nethserver-release
 Version: 7
-Release: 8%{?dist}
+Release: 9%{?dist}
 License: GPL
 BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
@@ -39,6 +39,9 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Mon Dec 03 2018 Davide Principi <davide.principi@nethesis.it> - 7-9
+- NethServer 7.6.1810 beta
+
 * Fri Jun 08 2018 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 7-8
 - NethServer 7.5.1804 final
 - Fix nethserver-config-network not enabled - NethServer/dev#5520
