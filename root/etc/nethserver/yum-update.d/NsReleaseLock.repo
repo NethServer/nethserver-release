@@ -8,6 +8,7 @@ name=CE-Base-$nsrelease
 mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=ce-base&arch=$basearch&nsrelease=$nsrelease
 #baseurl=http://mirror.centos.org/centos/$nsrelease/os/$basearch/
 gpgcheck=1
+repo_gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 enabled = 1
 
@@ -16,6 +17,7 @@ name=CE-Updates-$nsrelease
 mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=ce-updates&arch=$basearch&nsrelease=$nsrelease
 #baseurl=http://mirror.centos.org/centos/$nsrelease/updates/$basearch/
 gpgcheck=1
+repo_gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 enabled = 1
 
@@ -24,6 +26,7 @@ name=CE-Extras-$nsreleas
 mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=ce-extras&arch=$basearch&nsrelease=$nsrelease
 #baseurl=http://mirror.centos.org/centos/$nsrelease/extras/$basearch/
 gpgcheck=1
+repo_gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 enabled = 1
 
@@ -35,6 +38,8 @@ enabled = 1
 name=NethServer-$releasever - Base
 #mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=base&arch=$basearch&nsrelease=$nsrelease
 baseurl=http://mirror.nethserver.org/nethserver/$releasever/base/$basearch/
+gpgcheck=1
+repo_gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-$releasever
 enabled=1
 enablegroups=0
@@ -43,6 +48,8 @@ enablegroups=0
 name=NethServer-$releasever - Updates
 mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=updates&arch=$basearch&nsrelease=$nsrelease
 #baseurl=http://mirror.nethserver.org/nethserver/$releasever/updates/$basearch/
+gpgcheck=1
+repo_gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethServer-$releasever
 enabled=1
 enablegroups=1
@@ -51,6 +58,8 @@ enablegroups=1
 name=NethForge $releasever
 mirrorlist=http://mirrorlist.nethserver.org/$releasever/nethserver?release=$releasever&repo=nethforge&arch=$basearch&nsrelease=$nsrelease
 #baseurl=http://mirror.nethserver.org/nethserver/$releasever/nethforge/$basearch/
+gpgcheck=1
+repo_gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-NethForge-7
 enabled=1
 enablegroups=1

@@ -33,6 +33,7 @@ event_templates('nethserver-release-update', qw(
 
 event_actions('nethserver-release-update', qw(
     initialize-default-databases 00
+    nethserver-base-import-repokeys 01
 ));
 
 #
