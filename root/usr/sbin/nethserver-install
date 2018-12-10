@@ -72,6 +72,16 @@ function end {
     exit 0
 }
 
+expected_version="$(</etc/e-smith/db/configuration/force/sysconfig/Version)"
+
+if [[ -n "${expected_version}" ]] && ! grep -q -F "${expected_version}" /etc/system-release; then
+    log "Invalid CentOS release: $(</etc/system-release)"
+    echo "Invalid CentOS release: $(</etc/system-release)"
+    echo "The expected version is ${expected_version}"
+    echo "Update the nethserver-release RPM to the latest available version"
+    exit 1
+fi
+
 rpm -q nethserver-base >/dev/null
 if [ $? -eq 0 ]; then
    echo
