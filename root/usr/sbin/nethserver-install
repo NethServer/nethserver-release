@@ -73,13 +73,31 @@ function end {
 }
 
 expected_version="$(</etc/e-smith/db/configuration/force/sysconfig/Version)"
+ns_version=$(echo $expected_version | tr -dc '0-9')
+centos_version=$(cat /etc/system-release | tr -dc '0-9')
+centos_full_release=$(cat /etc/redhat-release  | grep -oP "\d\.\d\.\d+")
 
 if [[ -n "${expected_version}" ]] && ! grep -q -F "${expected_version}" /etc/system-release; then
     log "Invalid CentOS release: $(</etc/system-release)"
-    echo "Invalid CentOS release: $(</etc/system-release)"
-    echo "The expected version is ${expected_version}"
-    echo "Update the nethserver-release RPM to the latest available version"
-    exit 1
+    echo
+    echo "[WARNING] CentOS release ($centos_full_release) should match NethServer release ($expected_version)!"
+    echo
+    if [ $centos_version -lt $ns_version ]; then
+        echo "Trying to update CentOS to $expected_version ..."
+        yum update -y
+        echo
+        if [ $? -gt 0 ]; then
+            echo "[ERROR] Updated failed, try running again $0"
+            exit 1
+        else
+            echo "CentOS update complete!"
+        fi
+        echo
+    else
+        echo "Are you sure NethServer $centos_version is already available?"
+        echo "Try to update the nethserver-release RPM to the latest available version."
+        exit 1
+    fi
 fi
 
 rpm -q nethserver-base >/dev/null
@@ -102,7 +120,7 @@ fi
 
 
 log "Starting installation"
-echo "Starting installation process. It will take a while..."
+echo "Starting NethServer installation process. It will take a while..."
 echo
 echo "Installing base system${modules:+ and }$modules..."
 echo
