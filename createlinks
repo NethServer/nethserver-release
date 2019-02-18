@@ -29,11 +29,12 @@ use esmith::Build::CreateLinks  qw(:all);
 event_templates('nethserver-release-update', qw(
     /etc/issue
     /etc/motd
+    /etc/yum.repos.d/NethServer.repo
+    /etc/yum.repos.d/NsReleaseLock.repo
 ));
 
 event_actions('nethserver-release-update', qw(
     initialize-default-databases 00
-    nethserver-base-import-repokeys 01
 ));
 
 #
@@ -44,3 +45,9 @@ event_templates('nethserver-base-update', qw(
     /etc/motd
 ));
 
+#
+# software-repos-save event
+#
+event_templates('software-repos-save', qw(
+    /etc/yum.repos.d/NethServer.repo
+));
