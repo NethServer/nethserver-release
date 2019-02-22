@@ -39,7 +39,7 @@ mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=ce-base&ar
 gpgcheck=1
 repo_gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-enabled = 0
+enabled=0
 
 [ce-updates]
 name=CE-Updates-$nsrelease
@@ -48,7 +48,7 @@ mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=ce-updates
 gpgcheck=1
 repo_gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-enabled = 0
+enabled=0
 
 [ce-extras]
 name=CE-Extras-$nsrelease
@@ -57,7 +57,7 @@ mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=ce-extras&
 gpgcheck=1
 repo_gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-enabled = 0
+enabled=0
 
 [ce-sclo-sclo]
 name=CE-SCLo-sclo-$nsrelease
@@ -66,7 +66,7 @@ mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=ce-sclo-sc
 gpgcheck=1
 repo_gpgcheck=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-SCLo
-enabled = 0
+enabled=0
 
 [ce-sclo-rh]
 name=CE-SCLo-rh-$nsrelease
@@ -75,4 +75,4 @@ mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=ce-sclo-rh
 gpgcheck=1
 repo_gpgcheck=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-SCLo
-enabled = 0
+enabled=0
