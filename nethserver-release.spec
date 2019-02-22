@@ -4,7 +4,7 @@
 Summary: NethServer YUM repo configuration
 Name: nethserver-release
 Version: 7
-Release: 12%{?dist}
+Release: 13%{?dist}
 License: GPL
 BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
@@ -37,6 +37,9 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Fri Feb 22 2019 Davide Principi <davide.principi@nethesis.it> - 7-13
+- Ultimate software origin policy -- NethServer/dev#5704
+
 * Fri Dec 17 2018 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 7-12
 - Improve installation on CentOS
 
