@@ -1,4 +1,17 @@
 {
+    # extra gpgkey's and conditional repo_gpgcheck for AltArchs
+    our $repo_gpgcheck = '1';
+    our $armhfp_gpgkey = "";
+    our $aarch64_gpgkey = "";
+    if ( -e '/etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-AltArch-Arm32' ) {
+       $armhfp_gpgkey =  "\n       file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-AltArch-Arm32";
+       $repo_gpgcheck = '0';
+    }
+    if ( -e '/etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7-aarch64' ) {
+       $aarch64_gpgkey = "\n       file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7-aarch64";
+       $repo_gpgcheck = '0';
+    }
+
     our $communityEnabled = $subscription{'SystemId'} ? '0' : '1';
     '';
 }
@@ -37,8 +50,8 @@ name=CE-Base-$nsrelease
 mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=ce-base&arch=$basearch&nsrelease=$nsrelease
 #baseurl=http://mirror.centos.org/centos/$nsrelease/os/$basearch/
 gpgcheck=1
-repo_gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+repo_gpgcheck={$repo_gpgcheck}
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 {$armhfp_gpgkey} {$aarch64_gpgkey}
 enabled={$communityEnabled}
 
 [ce-updates]
@@ -46,8 +59,8 @@ name=CE-Updates-$nsrelease
 mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=ce-updates&arch=$basearch&nsrelease=$nsrelease
 #baseurl=http://mirror.centos.org/centos/$nsrelease/updates/$basearch/
 gpgcheck=1
-repo_gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+repo_gpgcheck={$repo_gpgcheck}
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 {$armhfp_gpgkey} {$aarch64_gpgkey}
 enabled={$communityEnabled}
 
 [ce-extras]
@@ -55,8 +68,8 @@ name=CE-Extras-$nsrelease
 mirrorlist=http://mirrorlist.nethserver.org/?release=$releasever&repo=ce-extras&arch=$basearch&nsrelease=$nsrelease
 #baseurl=http://mirror.centos.org/centos/$nsrelease/extras/$basearch/
 gpgcheck=1
-repo_gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+repo_gpgcheck={$repo_gpgcheck}
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7 {$armhfp_gpgkey} {$aarch64_gpgkey}
 enabled={$communityEnabled}
 
 [ce-sclo-sclo]
