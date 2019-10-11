@@ -4,7 +4,7 @@
 Summary: NethServer YUM repo configuration
 Name: nethserver-release
 Version: 7
-Release: 15%{?dist}
+Release: 16%{?dist}
 License: GPL
 BuildArch: noarch
 Source: %{name}-%{version}.tar.gz
@@ -37,6 +37,9 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Fri Oct 11 2019 Davide Principi <davide.principi@nethesis.it> - 7-16
+- Unable to install or update rpm's on armhfp/aarch64 with 7.7.1908 -- Bug NethServer/arm-dev#31
+
 * Mon Oct 07 2019 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 7-15
 - NethServer 7.7.1908 final
 
