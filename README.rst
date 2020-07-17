@@ -8,7 +8,7 @@ This RPM can be installed on a plain CentOS 7 minimal. It provides the
 additional YUM repositories and RPMs for the NethServer system.
 
 Building a release RPM
-======================
+----------------------
 
 1. The Version tag is fixed to "7". Increment the .spec file Release tag (e.g.: "12%{?dist}")
 2. Write the %changelog entry in the .spec file
