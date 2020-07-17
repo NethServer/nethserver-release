@@ -1,45 +1,21 @@
-==================
+.. _nethserver-release-module:
+
 nethserver-release
 ==================
 
-A NethServer system is constituted by RPMs that come mainly from CentOS, EPEL
-and NethServer mirrors. Updates are announced by each project on its specific 
-channel:
+This RPM can be installed on a plain CentOS 7 minimal. It provides the
+``nethserver-install`` command that downloads, installs and configures
+additional YUM repositories and RPMs for the NethServer system.
 
-* NethServer https://github.com/NethServer/dev/issues?q=is%3Aissue+is%3Aclosed
+Building a release RPM
+======================
 
-* CentOS https://lists.centos.org/mailman/listinfo/centos-announce
+1. The Version tag is fixed to "7". Increment the .spec file Release tag (e.g.: "12%{?dist}")
+2. Write the %changelog entry in the .spec file
+3. Commit the above changes
+5. Create a git tag like "7r12". Do not use any "-" (minus) sign as separator!
+6. Push the tag and the commit to start the automated build on Travis CI
 
-* EPEL https://lists.fedoraproject.org/admin/lists/epel-package-announce@lists.fedoraproject.org/
+Builds started from a tagged commit are published to "updates"!
 
-A NethServer machine fetches:
-
-- NethServer updates from an URL like: ``http://mirror.nethserver.org/nethserver/$releasever/updates/$basearch/``
-
-- CentOS updates from an URL like: ``http://mirror.centos.org/centos/$releasever/updates/$basearch/``
-
-- EPEL updates from an URL like: ``http://download.fedoraproject.org/pub/epel/7/$basearch``
-
-Where ``$releasever`` is currently ``7``, and ``$basearch`` is ``x86_64``.
-
-All those packages updates improve the original system release by pushing it forward, like rolling continuously.
-
-When CentOS produces a new minor version like 7.5.1804 they publish a new "minimal" ISO image. 
-The NethServer developers add a small RPM set on that image together with a kickstart file.
-The resulting image is the NethServer ISO, with installer, server-manager and other stuff.
-
-When NethServer 7.5.1804 is released, any existing 7.4.1708 installation can be upgraded seamlessly,
-because both CentOS and NethServer ensure compatibility between minor releases.
-
-Locking to a specific distribution release
-==========================================
-
-It is possible to lock to a specific distribution release, like ``7.5.1804`` as
-explained in the "Software center" section of the administrator's manual.
-
-The implementation is provided by the ``nethserver-base`` package and is based
-on the following elements:
-
-* ``sysconfig/NsReleaseLock`` prop
-* ``software-repos-save`` event
-* ``software-repos-upgrade`` event
+More information: https://docs.nethserver.org/projects/nethserver-devel/en/v7/building_rpms.html
