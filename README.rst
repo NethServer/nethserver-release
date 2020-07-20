@@ -11,10 +11,14 @@ Building a release RPM
 ----------------------
 
 1. The Version tag is fixed to "7". Increment the .spec file Release tag (e.g.: "12%{?dist}")
+
 2. Write the %changelog entry in the .spec file
+
 3. Commit the above changes
-5. Create a git tag like "7r12". Do not use any "-" (minus) sign as separator!
-6. Push the tag and the commit to start the automated build on Travis CI
+      
+4. Create a git tag like "7r12". Do not use any "-" (minus) sign as separator!
+
+5. Push the tag and the commit to start the automated build on Travis CI
 
 Builds started from a tagged commit are published to "updates"!
 
