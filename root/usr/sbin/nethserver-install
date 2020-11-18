@@ -75,7 +75,7 @@ function end {
 expected_version="$(</etc/e-smith/db/configuration/force/sysconfig/Version)"
 ns_version=$(echo $expected_version | tr -dc '0-9')
 centos_version=$(cat /etc/system-release | tr -dc '0-9')
-centos_full_release=$(cat /etc/redhat-release  | grep -oP "\d\.\d\.\d+")
+centos_full_release=$(grep -oP "\d\.\d+\.\d+" /etc/system-release)
 
 if [[ -n "${expected_version}" ]] && ! grep -q -F "${expected_version}" /etc/system-release; then
     log "Invalid CentOS release: $(</etc/system-release)"
