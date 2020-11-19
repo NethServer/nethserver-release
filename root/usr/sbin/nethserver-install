@@ -51,13 +51,13 @@ function end {
     hostname=`/sbin/e-smith/db configuration get SystemName`
     domainname=`/sbin/e-smith/db configuration get DomainName`
     echo
-    echo -n "    https://$hostname.$domainname:980"
+    echo -n "    https://$hostname.$domainname:9090"
     for k in `/sbin/e-smith/db networks keys`
     do
        role=`/sbin/e-smith/db networks getprop $k role`
        if [ "$role" == "green" ]; then
            ip=$(/sbin/e-smith/db networks getprop $k ipaddr)
-           echo " (or https://$ip:980)"
+           echo " (or https://$ip:9090)"
        fi
     done
     echo 
